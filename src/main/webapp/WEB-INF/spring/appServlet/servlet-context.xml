@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<annotation-driven />
+
+	<!-- 
+	View(뷰)에서 이미지나 JS와 같은 정적 리소스를 사용하기 위해서 Spring이
+	제공하는 디렉토리로 아래와 같이 매핑할 수 있다.
+	형식] 
+		<resources mapping="매핑명" location="실제경로(webapp하위)" 
+	 -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/static/**" location="/resources/" />
+
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<!-- 
+	SpringMVC로 요청이 들어오면 제일 먼저 DispatcherServlet이 그 요청을 받는다.
+	그리고 아래 설정된 기본 패키지를 Scan(검색)한 후 @Controller 어노테이션이
+	설정된 클래스의 요청이 매핑된 메서드를 찾아 요청을 전달한다.
+	 -->
+	<context:component-scan base-package="com.kosmo.springlegacy" />
+	
+	
+	
+</beans:beans>
