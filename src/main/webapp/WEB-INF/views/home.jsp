@@ -7,6 +7,9 @@
 <title>Home</title>
 <link rel="stylesheet" href="/springlegacy/static/bootstrap-5.1.3/css/bootstrap.css" />
 <script src="/springlegacy/resources/jquery/jquery-3.6.0.js"></script>
+<style>
+	h3{margin-top: 30px;}
+</style>
 </head>
 <body>
 <div class="container">
@@ -20,7 +23,7 @@
 	<h3>resources 폴더 사용하기</h3>
 	<!-- views 폴더 하위에 있는 해당 이미지는 출력되지 않는다. 
 	views 폴더에는 View 파일, 즉 jsp만 위치할 수 있다. -->
-	<img src="./img_avartar1.png" alt="부트스트랩 아바타1" />
+	<!-- <img src="./img_avartar1.png" alt="부트스트랩 아바타1" /> -->
 	
 	<!-- 원래의 폴더명은 resources이나 아래와 같이 개발자가 별도로 별칭을
 	부여하여 매핑할 수 있다. -->
@@ -63,6 +66,60 @@
 	<li>
 		<a href="./requestMapping/index.do" target="_blank">
 			requestMapping 시작페이지 바로가기
+		</a>
+	</li>
+	
+	<!-- 컨트롤러: ValidateController.java -->
+	<h3>폼 데이터 검증하기- Validator</h3>
+	<li>
+		<a href="validate/memberRegist.do" target="_blank">
+			회원가입 바로가기
+		</a>
+	</li>
+	
+	<!-- 컨트롤러: DIController.java -->
+	<h3>DI(Dependency Injection): 의존성 주입</h3>
+	<li>
+		<a href="di/mydi1.do" target="_blank">
+			XML 설정파일을 통한 빈 생성1(생성자와 setter)
+		</a>
+	</li>
+	
+	<!-- 컨트롤러: .java -->
+	<li>
+		<a href="di/mydi2.do" target="_blank">
+			XML 설정파일을 통한 빈 생성2(다양한 멤버변수)
+		</a>
+	</li>
+	
+	<!-- 컨트롤러: .java -->
+	<li>
+		<a href="di/mydi3.do" target="_blank">
+			어노테이션을 통한 빈 생성
+		</a>
+	</li>
+	
+	<!-- 컨트롤러: EnvironmentController.java -->
+	<h3>Environment 객체를 이용한 외부파일 참조하기</h3>
+	<li>
+		<a href="Environment/main1" target="_blank">
+			외부파일 참조하기1(Environment 객체 사용)
+		</a>
+	</li>
+	
+	<!-- 컨트롤러:  -->
+	<h3>파일 업로드</h3>
+	<li>
+		<a href="./fileUpload/uploadPath.do" target="_blank">
+			upload 폴더의 물리적 경로 확인하기
+		</a>
+	</li>
+	
+	<!-- 컨트롤러: FileuploadController.java -->
+	<h3>파일 업로드</h3>
+	<li>
+		<a href="./fileUpload/uploadForm.do" target="_blank">
+			파일 업로드 폼
 		</a>
 	</li>
 	

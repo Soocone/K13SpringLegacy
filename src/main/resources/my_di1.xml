@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+	아래 bean 태그를 Java코드로 표현하면
+	import di.Point;
+	Point pointXY = new Point(3, 4);
+	즉 Point 객체를 3, 4를 초기값으로 생성한다.
+	
+	형식] <bean id="참조변수명" class="패키지를 포함한 풀 경로">
+	 -->
+	<bean id="pointXY" class="di.Point">
+		<!-- 생성자를 통해 빈을 생성할때 사용 -->
+		<constructor-arg value="3" /> <!-- 생성자의 첫번째 인자값 -->
+		<!-- 두번째 인자값 -->
+		<constructor-arg>
+			<value>4</value>
+		</constructor-arg>
+	</bean>
+	
+	<!-- 두번째 빈은 setter()를 통해 초기화한다. -->
+	<bean id="circle" class="di.Circle">
+		<!-- 멤버변수 point를 setter를 통해 초기화 -->
+		<property name="point">
+			<!-- 앞에서 생성했던 Point객체를 초기값으로 사용한다. -->
+			<ref bean="pointXY" />
+		</property>
+		<property name="radian" value="20"/>
+	</bean>
+</beans>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- setter를 통해 멤버변수 초기화 -->
+	<bean id="person" class="di.Person">
+		<property name="name" value="홍길동"/>
+		<property name="age">
+			<value>34</value>
+		</property>
+		<!-- ArrayList<> 타입의 멤버변수 초기화 -->
+		<property name="hobbys">
+			<list>
+				<value>자전거</value>
+				<value>퀵보드</value>
+				<value>레고</value>
+			</list>
+		</property>
+	</bean>
+</beans>
+
